@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
+	"google.golang.org/protobuf/proto"
 
 	dto "github.com/prometheus/client_model/go"
 )

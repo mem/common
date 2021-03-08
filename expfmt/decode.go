@@ -21,6 +21,7 @@ import (
 	"net/http"
 
 	dto "github.com/prometheus/client_model/go"
+	"google.golang.org/protobuf/proto"
 
 	"github.com/matttproud/golang_protobuf_extensions/pbutil"
 	"github.com/prometheus/common/model"
@@ -137,7 +138,8 @@ func (d *textDecoder) Decode(v *dto.MetricFamily) error {
 		}
 	}
 
-	*v = *d.fams[0]
+	v.Reset()
+	proto.Merge(v, d.fams[0])
 	d.fams = d.fams[1:]
 
 	return nil

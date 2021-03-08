@@ -15,10 +15,11 @@ package expfmt
 
 import (
 	"bytes"
-	"github.com/golang/protobuf/proto"
-	dto "github.com/prometheus/client_model/go"
 	"net/http"
 	"testing"
+
+	dto "github.com/prometheus/client_model/go"
+	"google.golang.org/protobuf/proto"
 )
 
 func TestNegotiate(t *testing.T) {
